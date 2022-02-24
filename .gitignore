@@ -1,0 +1,4 @@
+# Ignore all the Cache items
+base/__pycache__
+base/migrations/__pycache__
+DjangoDevChatRoom/__pycache__
