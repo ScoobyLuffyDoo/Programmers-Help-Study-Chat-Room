@@ -1,0 +1,64 @@
+
+** Activate Environment **
+    To activate the environment run:
+        : env\Scripts\activate
+    deactivate environment
+        : deactivate
+
+** create an app **
+    to create an app (web section)
+        : python manage.py startapp (app Name)
+
+** see django Commands**
+    run: django-admin
+
+
+
+**note**
+folder: wedbud is the project
+
+Start application 
+    run: python manage.py runserver
+
+apps
+    you can have multiple apps 
+        apps are like sections in you web application 
+            wedbud - Project
+                |_ base # base application
+                |_ (example WedCouple) # application section
+                |_ (example WedVenue ) # application section
+
+
+
+
+** Remember **
+apps:
+    |_ when creating an app you need to add it to the settings.py and add it to the installed_apps
+
+Templates: 
+    |_ when adding the Templates Folder remember to add it to the settings.py under TEMPLATES sub DIRS
+    |   |_ add:  BASE_DIR / 'templates'
+    |
+    |_ When adding a templates folder to the app make sure to add a subfolder with the app name
+    |
+    |_ For Template Tag info go to: 
+    |   |_ Django template engine
+    |
+    |_ reference the url path with name in the html templates, so if url changes, you don't have to update every html file.
+        |_ example : home.html - {%url 'room' room.id %}
+
+
+Models: 
+    |_ when you Create or Change(tables) in the app models.py you need to run the following
+        |_ run: python manage.py makemigrations
+        |_ run: python manage.py migrate (this will go into the latest migrations and execute that)
+    |
+    |_ After Model is created remember to register it in your admin
+
+
+Querying Data: 
+    |_ to work with the data as ORM way look at format below
+        |_ Format: queryset = ModelName.objects.all()
+                                                .get()
+                                                .filter()
+                                                .exclude()
